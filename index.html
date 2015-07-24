@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html ng-app='mytheater'>
+<head >
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mithun Das. JAVA/ J2EE / Mobile Tech Lead and Developer">
+    <meta name="author" content="Mithun Das">
+	<title>My Theater created by Mithun Das</title>
+
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet/less" type="text/css" href="assets/css/style.css">
+	<script type="text/javascript" src="lib/less/dist/less.min.js"></script>
+
+</head>
+<body class="container-fluid">
+	
+	<header>
+		<img src="assets/images/me.png" class="avatar"/>
+		<span class="brand"><a ui-sref="/">My Theater</a></span></header>
+	<nav class="menu-wrapper">
+		
+		<ul class="list-unstyled menu-item-wrapper" >
+			<li>
+				<a ui-sref="/" class="visible-sm visible-md visible-lg">
+					<i class="glyphicon glyphicon-film" aria-hidden="true"></i> Watched List
+				</a>
+				<a ui-sref="/"  class="visible-xs">
+					<i class="glyphicon glyphicon-film " aria-hidden="true"></i>
+				</a>
+			</li>
+			
+			<li>
+				<a ui-sref="wishlist" class="visible-sm visible-md visible-lg">
+					<i class="glyphicon glyphicon-list" aria-hidden="true"></i>  My Wishlist
+				</a>
+				<a ui-sref="wishlist" class="visible-xs">
+					<i class="glyphicon glyphicon-list" aria-hidden="true"></i>  
+				</a>
+			</li>
+			
+			<li>
+				<a href="" class="visible-sm visible-md visible-lg">
+					<i class="glyphicon glyphicon-heart" aria-hidden="true"></i>  Top Rated Movies
+				</a>
+				<a href="" class="visible-xs">
+					<i class="glyphicon glyphicon-heart " aria-hidden="true"></i>
+				</a>
+			</li>
+			<li>
+				<a href="" class="visible-sm visible-md visible-lg">
+					<i class="glyphicon glyphicon-king" aria-hidden="true"></i>  Top Rated Artist
+				</a>
+				<a href="" class="visible-xs">
+					<i class="glyphicon glyphicon-king " aria-hidden="true"></i>
+				</a>
+			</li>
+			
+			<li>
+				<a href="" class="visible-sm visible-md visible-lg">
+					<i class="glyphicon glyphicon-hdd" aria-hidden="true"></i> iMDB Store 
+				</a>
+				<a href="" class="visible-xs">
+					<i class="glyphicon glyphicon-hdd " aria-hidden="true"></i> 
+				</a>
+			</li>
+			
+		</ul>
+	</nav>
+	<div class="content-wrapper">
+		<button class="btn btn-success" id="animate">Modal</button>
+		<button class="btn btn-warning" ng-click="toggle=!toggle" ng-init="toggle=false">Toggle</button>{{toggle}}
+
+		<div class="alert alert-success alert-container" role="alert" ng-if="toggle">General message</div>
+		<div class="page-img">
+		<img id="me" src="https://connecttechfocus.herokuapp.com/images/me.png" >
+		</div>
+		<div ui-view class="page-partial " ng-class="{'animate':toggle}"></div>
+		
+
+
+	</div>
+
+	<div class="mt-modal" id="modal-download">
+		<div class="mt-title">Downloading <button class="close pull-right">X</button></div>
+		<p>Your movie is downloading. Please wait...</p>
+	</div>
+</body>
+<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="lib/angular/angular.min.js"></script>
+<script type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript" src="lib/angular-animate/angular-animate.min.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/WatchedlistController.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		console.log('DOM loaded');
+
+		// setTimeout(function(){
+		// 		$(".page-partial").addClass("animate");
+		// 	},200);
+
+
+		$("#animate").on("click",function(){
+			$('body').prepend('<div id="backdrop"></div>');
+			$("#modal-download").css({display:'block'});
+
+			$("#backdrop").css({display:'block'});
+
+		});
+
+		$("#me").on("load",function(){
+			console.log('loaded');
+		})
+		// $(".menu-item-wrapper a").on("click", function(e){
+			
+		// 	//alert($(e.target).attr('href'));
+		// 	setTimeout(function(){
+		// 		$(".page-partial").addClass("animate");
+		// 	},200);
+			
+		// });
+
+		$(".mt-modal .close").on("click",function(e){
+			
+			$(e.target).parent().parent().css({display:'none'});
+			$("#backdrop").css({display:'none'});
+			$("#backdrop").remove();
+		})
+
+	});
+</script>
+</html>

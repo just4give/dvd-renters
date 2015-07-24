@@ -1,0 +1,25 @@
+{
+  "name": "MyProfile",
+  "version": "0.0.0",
+  "authors": [
+    "Mithun Das"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "lib",
+    "test",
+    "tests",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.4.3",
+    "bootstrap": "~3.3.5",
+    "less": "~2.5.1",
+    "angular-ui-router": "~0.2.15",
+    "angular-animate": "~1.4.3",
+    "requirejs": "~2.1.19"
+  }
+}
