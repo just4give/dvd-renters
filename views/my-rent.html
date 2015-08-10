@@ -1,0 +1,23 @@
+<div id="rentlist" class="scroll-container">
+		
+		<div class="text-center">
+			<h3 class="text-gray">Your Rent History</h3>
+		</div>
+		
+		<div class="col-xs-12 well" ng-hide="{{rentlist && rentlist.length != 0}}">
+			<span >What are you waiting for ? Rent and watch your movie at your home. Goto <a ui-sref="store"  class="link">iMDB Store</a> and rent your first movie</span>
+		</div>
+		
+		<div class="row rent-list" ng-repeat="dvdId in rentlist">
+			<span class="col-xs-1">{{$index+1}}</span>
+			<span class="col-xs-6">{{getTitle(dvdId)}}</span>
+			<span class="col-xs-3">{{date | date:'MM-dd-yyyy'}}</span>
+			<span class="col-xs-2">Ordered</span>
+		</div>
+		<!-- <div class="dvd-panel" ng-repeat="dvdId in rentlist">
+			<img ng-src="http://image.tmdb.org/t/p/w500/{{getPoster(dvdId)}}">
+			<div class="footer">
+				<button class="btn btn-block" ng-class="isRented(dvdId)? 'btn-success' : 'btn-warning'" ng-click="rentMovie(dvdId)" >DELETE</button>
+			</div>
+		</div> -->
+</div>

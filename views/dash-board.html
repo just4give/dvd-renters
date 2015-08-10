@@ -1,0 +1,45 @@
+<div class="row">
+	<section class="col-sm-6 col-xs-12" >
+		<div id="panel-1" class="db-panel panel-1" ng-click="select('#panel-1','rent')">
+			<div class="title"><span>YOUR RENT<span></div>
+			<i class="fa fa-suitcase icon"></i>
+			<div class="figure">
+				<span ng-show="{{rentlist.length > 0}}">{{rentlist.length}}</span>
+				<span class="msg" ng-hide="{{rentlist && rentlist.length != 0}}">Rent your movie</span>
+			</div>
+		</div>
+	</section>
+	<section class="col-sm-6 col-xs-12" >
+		<div id="panel-3" class="db-panel panel-3" ng-click="select('#panel-3','wishlist')">
+			<div class="title"><span>YOUR WISHLIST<span></div>
+			<i class="fa fa-shopping-cart icon"></i>
+			<div class="figure">
+				<span ng-show="{{wishlist.length > 0}}">{{wishlist.length}}</span>
+				<span class="msg" ng-hide="{{wishlist && wishlist.length != 0}}">Empty Wishlist</span>
+			</div>
+		</div>
+	</section>
+	
+
+</div>
+<div class="row">
+
+	<section class="col-sm-6 col-xs-12" >
+		<div id="panel-2" class="db-panel panel-2" ng-click="select('#panel-2','wishlist')">
+			<div class="title"><span>DVDs ON YOUR WAY<span></div>
+			<i class="fa fa-truck icon"></i>
+			<div class="figure"><span>1<span></div>
+		</div>
+	</section>
+	
+	<section class="col-sm-6 col-xs-12" >
+		<div id="panel-4" class="db-panel panel-4" ng-click="select('#panel-4','wishlist')">
+			<div class="title"><span>YOUR TOP RATED<span></div>
+			<i class="fa fa-thumbs-up icon"></i>
+			<div class="figure"><span>3<span></div>
+		</div>
+	</section>
+
+
+
+</div>

@@ -1,0 +1,14 @@
+<div id="wishlist" class="row scroll-container">
+		<div class="col-xs-12 well" ng-hide="{{wishlist && wishlist.length != 0}}">
+			<span >Your wishlist is empty. Goto <a ui-sref="store"  class="link">iMDB Store</a> and create your wishlist</span>
+		</div>
+		<div class="dvd-panel  col-xs-12 col-sm-4 col-md-3 col-lg-3" ng-repeat="dvdId in wishlist">
+			<img ng-src="http://image.tmdb.org/t/p/w500/{{getPoster(dvdId)}}">
+			<div class="footer">
+				<button class="btn btn-block" ng-class="isRented(dvdId) ? 'btn-success' : 'btn-warning'" ng-click="orderForRent(dvdId)" >{{isRented(dvdId)? 'ON YOUR WAY':'RENT THIS MOVIE'}}</button>
+			</div>
+		</div>
+
+
+
+</div>
