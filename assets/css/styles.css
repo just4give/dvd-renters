@@ -484,13 +484,7 @@ body {
   }
 }
 
-/* line 45, ../../sass/partials/_dvd.scss */
-.dvd-panel img:hover {
-  cursor: pointer;
-  opacity: 0.1;
-}
-
-/* line 52, ../../sass/partials/_dvd.scss */
+/* line 46, ../../sass/partials/_dvd.scss */
 .dvd-panel .footer {
   background-color: white;
   padding: 5px;
@@ -499,7 +493,7 @@ body {
   font-size: large;
 }
 
-/* line 61, ../../sass/partials/_dvd.scss */
+/* line 55, ../../sass/partials/_dvd.scss */
 .btn-detail {
   position: relative;
   top: -150px;
