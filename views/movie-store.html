@@ -21,7 +21,7 @@
 				<img ng-src="http://image.tmdb.org/t/p/w500/{{dvd.poster_path}}" ng-click="viewMovie(dvd.id,dvd.original_title,dvd.overview)" >
 				
 				<div class="footer">
-					<button class="btn btn-block btn-danger visible-xs visible-sm hidden-md hidden-lg" >Details</button>
+					<button class="btn btn-block btn-danger visible-xs visible-sm hidden-md hidden-lg"  ng-click="viewMovie(dvd.id,dvd.original_title,dvd.overview)">Details</button>
 					<button class="btn btn-block" ng-class="isWished(dvd.id)? 'btn-success' : 'btn-warning'" ng-click="addToWishlist(dvd.id,dvd.poster_path,dvd.original_title)" >{{isWished(dvd.id)? 'ADDED':'ADD TO WISHLIST'}}</button>
 				</div>
 			</div>

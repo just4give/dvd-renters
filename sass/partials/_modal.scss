@@ -1,0 +1,25 @@
+.modal-header{
+	background-color: #eea236;
+	border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-weight: bolder;
+    color: #FFFFFF;
+}
+
+.modal.am-fade {
+  transform: scale(1,1);
+  transition: transform .30s ease-in-out;
+  
+}
+.modal.am-fade.ng-enter {
+	transform: scale(0,0);
+}
+.modal.am-fade.ng-enter-active{
+	 transform: scale(1,1);
+}
+.modal.am-fade.ng-leave {
+	transform: scale(1,1);
+}
+.modal.am-fade.ng-leave-active {
+	transform: scale(0,0);
+}
